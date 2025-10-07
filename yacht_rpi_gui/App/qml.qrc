@@ -1,7 +1,9 @@
 <RCC>
     <qresource prefix="/">
         <!-- QML views -->
+        <file>main.qml</file>
         <file>views/home.qml</file>
+        <file>components/IconButton.qml</file>
         
 
         <!-- Assets Icons -->

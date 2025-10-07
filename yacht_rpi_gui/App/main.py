@@ -9,7 +9,7 @@ if __name__ == "__main__":
     view = QQmlApplicationEngine()
     view.addImportPath(sys.path[0])
     #view.load("App/views/home.qml")
-    view.load(QUrl("qrc:/views/home.qml"))
+    view.load(QUrl("qrc:main.qml"))
     ex = app.exec()
 
     del view
