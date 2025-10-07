@@ -1,13 +1,13 @@
 import sys
-from PySide6.QtGui import QGuiApplication
-from PySide6.QtQuick import QQuickView
-from PySide6.QtQml import QQmlApplicationEngine 
+from PyQt5.QtGui import QGuiApplication
+from PyQt5.QtQml import QQmlApplicationEngine 
+from PyQt5.QtCore import QUrl
 
 if __name__ == "__main__":
-    app = QGuiApplication()
+    app = QGuiApplication(sys.argv)
     view = QQmlApplicationEngine()
     view.addImportPath(sys.path[0])
-    view.loadFromModule("App","Home")
+    view.load("App/home.qml")
     ex = app.exec()
 
     del view
