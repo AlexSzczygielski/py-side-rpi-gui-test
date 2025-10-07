@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/">
+        <!-- QML views -->
+        <file>views/home.qml</file>
+        
+
+        <!-- Assets Icons -->
+        <file>assets/home.svg</file>
+        <file>assets/navi.svg</file>
+        <file>assets/settings.svg</file>
+
+        <!-- Assets Pictures -->
+        <file>assets/model.png</file>
+    </qresource>
+</RCC>

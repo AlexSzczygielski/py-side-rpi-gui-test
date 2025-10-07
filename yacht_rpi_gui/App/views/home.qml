@@ -9,27 +9,40 @@ ApplicationWindow {
     height: 720
     title: "Yacht System GUI"
 
+    property int iconSize: 50
+    property int currentPage: 0
+
     RowLayout {
         anchors.fill: parent
         anchors.margins: 20
         spacing: 16
 
         //Left Panel
-        ColumnLayout {
+        RowLayout {
             Layout.fillHeight: true
             Layout.preferredWidth: 100
             spacing: 16
 
-            RowLayout{
+            ColumnLayout{
                 //Left Icons Bar
-                ColumnLayout {
-                    Button {
-                        Layout.preferredHeight: 40
-                        Layout.preferredWidth: 40
-                        text: "Engine Start"
-                        Layout.fillWidth: true
-                    }
+                ToolButton {
+                    icon.source: "qrc:/assets/home.svg"
+                    icon.width: iconSize
+                    icon.height: iconSize
                 }
+
+                ToolButton {
+                    icon.source: "qrc:/assets/navi.svg"
+                    icon.width: iconSize
+                    icon.height: iconSize
+                }
+
+                ToolButton {
+                    icon.source: "qrc:/assets/settings.svg"
+                    icon.width: iconSize
+                    icon.height: iconSize
+                }
+            }
 
                 //Left Data
                 ColumnLayout{
@@ -46,7 +59,7 @@ ApplicationWindow {
                     }
                 }
             }
-        }
+        
 
         // Divider
         Rectangle { color: "#00bfa5"; implicitWidth: 2; Layout.fillHeight: true }
@@ -79,7 +92,7 @@ ApplicationWindow {
 
             Image {
                 Layout.topMargin: 40
-                source: "assets/model.png"
+                source: "qrc:/assets/model.png"
                 fillMode: Image.PreserveAspectFit
                 Layout.alignment: Qt.AlignHCenter
                 Layout.preferredWidth: 300
