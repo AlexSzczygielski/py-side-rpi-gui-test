@@ -28,6 +28,7 @@ sudo apt install -y qtcreator
 echo "Verifying installations..."
 python3 -c "import PySide2.QtQuick; import PySide2.QtQml; import PySide2.QtGui; print('PySide2 modules OK')"
 
+echo "pyqrcc packages"
 sudo apt install pyqt5-dev-tools pyqt5-dev
 
 echo "Setup complete! You can now run your Python QML app like this:"
