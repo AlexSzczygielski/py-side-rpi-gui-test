@@ -1,6 +1,6 @@
 #!/bin/bash
 # setup-yacht-gui.sh
-# Bash script to set up Python + PySide2 + QML environment for Raspberry Pi
+# Bash script to set upp Python + PySide2 + QML environment for Raspberry Pi
 
 set -e  # Exit immediately if a command fails
 
