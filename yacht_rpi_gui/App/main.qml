@@ -73,6 +73,7 @@ ApplicationWindow {
         Rectangle { color: "#00bfa5"; implicitWidth: 2; Layout.fillHeight: true }
 
         //Middle Section
+        Item { Layout.fillWidth: true } // left spacer
         ColumnLayout{
             Layout.fillWidth: true
             Layout.fillHeight: true
@@ -109,23 +110,50 @@ ApplicationWindow {
 
             // Optional spacer to push content up
             Item { Layout.fillHeight: true }
+
+            Item { Layout.fillWidth: true } // right spacer
         }
 
         //Divider
         Rectangle { color: "#00bfa5"; implicitWidth: 2; Layout.fillHeight: true }
 
         //Right Panel
-        ColumnLayout{
+        RowLayout {
             Layout.fillHeight: true
             Layout.preferredWidth: 100
             spacing: 16
 
-            Button {
-                Layout.preferredHeight: 80
-                text: "Engine Stop"
-                Layout.fillWidth: true
+            //Filler
+            Item { Layout.fillWidth: true }
+
+            ColumnLayout{
+                //Left Icons Bar
+
+                //Loading icons from IconButton.qml
+                Loader{
+                    id: loaderHome2
+                    source: "qrc:/components/IconButton.qml"
+                    onLoaded: {
+                        loaderHome2.item.iconSource = "qrc:/assets/home.svg"
+                    }
+                }
+
+                Loader{
+                    id: loaderNavi2
+                    source: "qrc:/components/IconButton.qml"
+                    onLoaded: {
+                        loaderNavi2.item.iconSource = "qrc:/assets/navi.svg"
+                    }
+                }
+
+                Loader{
+                    id: loaderSett2
+                    source: "qrc:/components/IconButton.qml"
+                    onLoaded: {
+                        loaderSett2.item.iconSource = "qrc:/assets/settings.svg"
+                    }
+                }
             }
-            
         }
     }
 }
