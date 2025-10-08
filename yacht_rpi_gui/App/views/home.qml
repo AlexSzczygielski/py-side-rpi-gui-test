@@ -7,13 +7,10 @@ RowLayout{
     Layout.fillWidth: true
     Layout.fillHeight: true
 
-    // Left spacer
-    Item { Layout.fillWidth: true }
 ColumnLayout{
-    Layout.fillWidth: true
     Layout.fillHeight: true
-    spacing: 20
-
+    spacing: 16
+    Layout.preferredWidth: 150
     Dial {
         id: volumeDial
         from: 0
@@ -31,11 +28,11 @@ ColumnLayout{
 Rectangle { color: "#00bfa5"; implicitWidth: 2; Layout.fillHeight: true }
 
 //Middle Section
-Item { Layout.fillWidth: true } // left spacer
 ColumnLayout{
     Layout.fillWidth: true
     Layout.fillHeight: true
     spacing: 20
+    Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
 
     //Time and Date
     ColumnLayout {
@@ -65,15 +62,25 @@ ColumnLayout{
         Layout.preferredWidth: 300
         Layout.preferredHeight: 300
     }
-
-    // Optional spacer to push content up
-    Item { Layout.fillHeight: true }
-
-    Item { Layout.fillWidth: true } // right spacer
 }
 
 //Divider
 Rectangle { color: "#00bfa5"; implicitWidth: 2; Layout.fillHeight: true }
-// Left spacer
-    Item { Layout.fillWidth: true }
+
+ColumnLayout{
+    Layout.fillHeight: true
+    spacing: 16
+    Layout.preferredWidth: 150
+    Dial {
+        id: volumeDial2
+        from: 0
+        value: 42
+        to: 100
+        stepSize: 1
+
+        Layout.alignment: Qt.AlignHCenter
+        Layout.preferredWidth: 128
+        Layout.preferredHeight: 128
+    }
+}
 }

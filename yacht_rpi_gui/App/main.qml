@@ -18,12 +18,13 @@ ApplicationWindow {
         spacing: 16
 
         //Left Panel
-        RowLayout {
-            Layout.fillHeight: true
-            Layout.preferredWidth: 100
-            spacing: 16
+        
+            
 
             ColumnLayout{
+                Layout.fillHeight: true
+            Layout.preferredWidth: 100
+            spacing: 16
                 //Left Icons Bar
 
                 //Loading icons from IconButton.qml
@@ -51,25 +52,27 @@ ApplicationWindow {
                     }
                 }
             }
-        }
+        
         
 
-        //Content
-
+        //Center Content
         Loader{
             source: "qrc:/views/home.qml"
+            Layout.fillWidth: true
+            Layout.fillHeight: true
         }
 
-        //Right Panel
-        RowLayout {
-            Layout.fillHeight: true
-            Layout.preferredWidth: 100
-            spacing: 16
 
-            //Filler
-            //Item { Layout.fillWidth: true }
+        //Right Panel
+        
+            
+
+            
 
             ColumnLayout{
+                Layout.fillHeight: true
+                Layout.preferredWidth: 100
+                spacing: 16
                 //Left Icons Bar
 
                 //Loading icons from IconButton.qml
@@ -97,6 +100,6 @@ ApplicationWindow {
                     }
                 }
             }
-        }
+        
     }
 }
