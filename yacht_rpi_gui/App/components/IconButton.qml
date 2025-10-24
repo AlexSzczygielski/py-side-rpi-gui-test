@@ -9,7 +9,7 @@ ToolButton {
 
     property bool selected: false
 
-    signal clicked
+    signal iconClicked()
 
     //Icon setup
     icon.source: iconSource
