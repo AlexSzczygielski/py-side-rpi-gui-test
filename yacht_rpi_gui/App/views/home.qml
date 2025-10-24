@@ -47,7 +47,7 @@ ColumnLayout{
         }
 
         Label {
-            text: "15/10/1410"
+            text: "15/07/1410"
             font.pixelSize: 18
             font.bold: true
             Layout.alignment: Qt.AlignHCenter

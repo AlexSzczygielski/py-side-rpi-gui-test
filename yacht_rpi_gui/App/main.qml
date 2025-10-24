@@ -33,6 +33,10 @@ ApplicationWindow {
                     source: "qrc:/components/IconButton.qml"
                     onLoaded: {
                         loaderHome.item.iconSource = "qrc:/assets/home.svg"
+                        loaderHome.item.clicked.connect(() => {
+                            loaderHome.item.selected = true
+                            mainLoader.source = "qrc:/views/home.qml"
+                        } )
                     }
                 }
 
