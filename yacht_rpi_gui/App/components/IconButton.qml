@@ -22,5 +22,5 @@ ToolButton {
       radius: 10
     }
     
-    onClicked: root.clicked()
+    onClicked: iconClicked()
 }

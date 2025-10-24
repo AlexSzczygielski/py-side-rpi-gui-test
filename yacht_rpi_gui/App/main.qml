@@ -10,7 +10,16 @@ ApplicationWindow {
     title: "Yacht System GUI"
 
     property int iconSize: 50
-    property int currentPage: 0
+    //property int currentPage: 0
+    property var allButtons: []
+
+    function resetSelection(){
+        //resets all of the selected buttons
+        for (let b of allButtons) {
+            if (b) b.selected = false
+        }
+    }
+
 
     RowLayout {
         anchors.fill: parent
@@ -30,11 +39,16 @@ ApplicationWindow {
                 source: "qrc:/components/IconButton.qml"
                 onLoaded: {
                     loaderHome.item.iconSource = "qrc:/assets/home.svg"
+                    loaderHome.item.selected = true
+                    //add to allButtons
+                    allButtons.push(loaderHome.item)
+
                     loaderHome.item.clicked.connect(() => {
+                        resetSelection()
                         loaderHome.item.selected = true
                         mainLoader.source = "qrc:/views/home.qml"
                     } )
-                    }
+                }
             }
 
             Loader{
@@ -42,6 +56,7 @@ ApplicationWindow {
                 source: "qrc:/components/IconButton.qml"
                 onLoaded: {
                     loaderNavi.item.iconSource = "qrc:/assets/navi.svg"
+                    allButtons.push(loaderNavi.item)
                 }
             }
 
@@ -50,6 +65,7 @@ ApplicationWindow {
                 source: "qrc:/components/IconButton.qml"
                 onLoaded: {
                     loaderSett.item.iconSource = "qrc:/assets/settings.svg"
+                    allButtons.push(loaderSett.item)
                 }
             }
         }
@@ -77,26 +93,35 @@ ApplicationWindow {
                 source: "qrc:/components/IconButton.qml"
                 onLoaded: {
                     loaderCV.item.iconSource = "qrc:/assets/camera100.svg"
-                    loaderCV.item.clicked.connect(() => {
-                        loaderCV.item.selected = true
-                        mainLoader.source = "qrc:/views/cv_panel.qml"
-                    } )
+                    allButtons.push(loaderCV.item)
+
+                    Qt.callLater(() => {
+                        loaderCV.item.clicked.connect(() => {
+                            resetSelection()
+                            loaderCV.item.selected = true
+                            mainLoader.source = "qrc:/views/cv_panel.qml"
+                        } )
+                    })
                 }
             }
 
             Loader{
                 id: loaderNavi2
                 source: "qrc:/components/IconButton.qml"
+
                 onLoaded: {
                     loaderNavi2.item.iconSource = "qrc:/assets/navi.svg"
+                    allButtons.push(loaderNavi2.item)
                 }
             }
 
             Loader{
                 id: loaderSett2
                 source: "qrc:/components/IconButton.qml"
+
                 onLoaded: {
                     loaderSett2.item.iconSource = "qrc:/assets/settings.svg"
+                    allButtons.push(loaderSett2.item)
                 }
             }
         }        
