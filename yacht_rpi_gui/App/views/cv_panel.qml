@@ -29,18 +29,13 @@ RowLayout{
                     backend.run_cv()
                 }
             }
-
-            Label {
-                text: "15/07/1410"
-                font.pixelSize: 18
-                font.bold: true
-                Layout.alignment: Qt.AlignHCenter
-            }
         }
 
         Image {
+            id: cv_roi_photo
             Layout.topMargin: 40
-            source: "qrc:/assets/model.png"
+            //source: "qrc:/assets/model.png"
+            source: ""
             fillMode: Image.PreserveAspectFit
             Layout.alignment: Qt.AlignHCenter
             Layout.preferredWidth: 300
@@ -50,5 +45,8 @@ RowLayout{
 
     Connections {
         target: backend
+        function onImageUpdated(path) {
+            cv_roi_photo.source = "file://" + path
+        }
     }
 }
