@@ -21,11 +21,13 @@ RowLayout{
             spacing: 2
             Layout.alignment: Qt.AlignHCenter
 
-            Label {
-                text: "12:00"
-                font.pixelSize: 78
-                font.bold: true
-                Layout.alignment: Qt.AlignHCenter
+            Button {
+                id: cv_roi
+                text: "Create ROI"
+
+                onClicked: {
+                    backend.run_cv()
+                }
             }
 
             Label {
@@ -44,5 +46,9 @@ RowLayout{
             Layout.preferredWidth: 300
             Layout.preferredHeight: 300
         }
+    }
+
+    Connections {
+        target: backend
     }
 }
